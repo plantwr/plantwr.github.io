@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Alfred</title>
+        <style>
+            body { background-image: url('https://cdn.wallpapersafari.com/1/97/co341S.jpg'); background-size: cover; }
+            #walle { width: 10%; margin-right: 80%; }
+            #eve { width: 10%; -webkit-transform: scaleX(-1); transform: scaleX(-1); }
+        </style>
+        <script>
+            var distance = 80, toMove = 1, milliSecondsToRefresh = 50
+            var interval = setInterval(moveWalle, milliSecondsToRefresh)
+            function moveWalle() {
+                var walle = document.getElementById('walle')
+                distance = distance - toMove
+                walle.style.marginRight = distance + '%';
+                if (distance === 0) {
+                    clearInterval(interval)
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div style="display:flex; flex-direction: row; height: 100%; align-items: center;">
+            <div style="display:flex; width: 100%; flex-flow: row-reverse;">
+                <img id="eve" src="eve.png">
+                <img id="walle" src="walle.png" >
+            </div>
+        </div>
+    </body>
+</html>
